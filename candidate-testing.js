@@ -19,35 +19,29 @@ let questions = [
 ]
 let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"]
 let candidateAnswers = [];
+
 function askForName(){
+  // TODO 1.1b: Ask for candidate's name //
   candidateName = input.question("What is your name? ");
 }
+
 function askQuestion(){
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-  // console.log(question);
-  // let candidateAnswer = input.question("Enter answer here");
   for (let i = 0; i < questions.length; i++){
     candidateAnswers.push(input.question(questions[i]))
     console.log("Your answer:", (candidateAnswers[i]));
     console.log("Correct answer:", (correctAnswers[i]));
   }
 }
-// console.log(askQuestion());
 
 function gradeQuiz(candidateAnswers){
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-  // if (candidateAnswer = correctAnswer){
-  //   console.log("Correct");
-  // } else {
-  //   console.log("Incorrect");
-  // }  
   let grade = 0;
   let numberOfCorrectAnswers = 0;
   for (let i = 0; i < candidateAnswers.length; i++){
     if(candidateAnswers[i].toUpperCase() == correctAnswers[i].toUpperCase()){
         numberOfCorrectAnswers += 1
     } 
-    
   }
   //TODO 3.2 use this variable to calculate the candidates score.
   grade = ((numberOfCorrectAnswers) / 5) * 100;  
@@ -58,7 +52,6 @@ function gradeQuiz(candidateAnswers){
     }
   console.log(grade);
   return grade;
- 
 }
 
 function runProgram() {
