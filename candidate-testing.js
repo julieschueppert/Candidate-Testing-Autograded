@@ -16,8 +16,8 @@ let questions = [
   "(5 + 3)/2 * 10 = ? ", 
   "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ", 
   "What is the minimum crew size for the ISS? "
-]
-let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"]
+];
+let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
 let candidateAnswers = [];
 
 function askForName(){
@@ -28,7 +28,7 @@ function askForName(){
 function askQuestion(){
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   for (let i = 0; i < questions.length; i++){
-    candidateAnswers.push(input.question(questions[i]))
+    candidateAnswers.push(input.question(questions[i]));
     console.log("Your answer:", (candidateAnswers[i]));
     console.log("Correct answer:", (correctAnswers[i]));
   }
@@ -40,15 +40,15 @@ function gradeQuiz(candidateAnswers){
   let numberOfCorrectAnswers = 0;
   for (let i = 0; i < candidateAnswers.length; i++){
     if(candidateAnswers[i].toUpperCase() == correctAnswers[i].toUpperCase()){
-        numberOfCorrectAnswers += 1
+        numberOfCorrectAnswers += 1;
     } 
   }
   //TODO 3.2 use this variable to calculate the candidates score.
   grade = ((numberOfCorrectAnswers) / 5) * 100;  
     if (grade >= 80){
-      console.log("You Passed")
+      console.log("You Passed");
     } else {
-      console.log("You failed")
+      console.log("You Failed");
     }
   console.log(grade);
   return grade;
